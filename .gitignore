@@ -272,4 +272,5 @@ __pycache__/
 build/
 
 # Cake
-.cake-tools/
+cake-tools/**
+cake/**
