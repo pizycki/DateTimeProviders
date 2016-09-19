@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IzzyDev.DateTimeProviders.Tests", "IzzyDev.DateTimeProviders.Tests\IzzyDev.DateTimeProviders.Tests.csproj", "{17F536BD-FEB4-45FB-B956-8677CE073C21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IzzyDev.DateTimeProviders", "IzzyDev.DateTimeProviders\IzzyDev.DateTimeProviders.csproj", "{681DDBB5-EFBC-4404-B39C-3376EA7EF332}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17F536BD-FEB4-45FB-B956-8677CE073C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F536BD-FEB4-45FB-B956-8677CE073C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F536BD-FEB4-45FB-B956-8677CE073C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F536BD-FEB4-45FB-B956-8677CE073C21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681DDBB5-EFBC-4404-B39C-3376EA7EF332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681DDBB5-EFBC-4404-B39C-3376EA7EF332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681DDBB5-EFBC-4404-B39C-3376EA7EF332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681DDBB5-EFBC-4404-B39C-3376EA7EF332}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
