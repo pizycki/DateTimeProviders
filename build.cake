@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////////////////
 
 var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Debug");
+var mode = Argument("mode", "Debug");
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION
@@ -34,7 +34,7 @@ Task("Full-Clean")
 Task("Clean")
     .Does(() =>
 {
-    CleanDirectories("./src/**/bin/*");    
+    CleanDirectories("./src/**/bin/*");
     CleanDirectories("./src/**/obj/*");
 });
 
@@ -51,7 +51,7 @@ Task("Clean-Cake-Tools")
 });
 
 Task("Restore-NuGet-Packages")
-    .IsDependentOn("Clean")
+    .IsDependentOn("Clean-Nuget-Packages")
     .Does(() =>
 {
     NuGetRestore("./src/IzzyDev.DateTimeProviders.sln");
@@ -62,15 +62,15 @@ Task("Build")
     .Does(() =>
 {
     MSBuild("./src/IzzyDev.DateTimeProviders.sln", settings => 
-        settings.SetConfiguration(configuration));
+        settings.SetConfiguration(mode));
 });
 
-Task("Run-Unit-Tests")
-    .WithCriteria(() => configuration == "Debug")
+Task("Unit-Tests")
+    .WithCriteria(() => mode == "Debug")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    // Configuration must be set to Debug so Shouldly could use *.pdb files.
+    // mode must be set to Debug so Shouldly could use *.pdb files.
     XUnit2("./src/**/bin/Debug/*.Tests.dll", 
         new XUnit2Settings 
         {
@@ -83,7 +83,7 @@ Task("Run-Unit-Tests")
 //////////////////////////////////////////////////////////////////////
 
 Task("Default")
-    .IsDependentOn("Run-Unit-Tests");
+    .IsDependentOn("Unit-Tests");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION
